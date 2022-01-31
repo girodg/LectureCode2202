@@ -14,10 +14,32 @@ namespace Day01
             TimeStamp(ref msg);
             PrintMessage(msg);
 
+            string age = "steev";
+            try
+            {
+                int myAge = int.Parse(age);
+            }
+            catch (Exception ex)
+            {
+                Console.Write("STEEV! NO.\n");
+            }
+            age = "12";
+            bool isNumber = int.TryParse(age, out int goodAge);
+
+
             Factor(ref num1, 3);
             Factor(ref num2, 3);
             //$ - interpolated string
             Console.WriteLine($"factored: {num1}");
+
+            int grade = 59;
+            int curve = 5;
+            CurveGrade(grade, curve, out int newGR);
+        }
+        static void CurveGrade(int grade, int curve, out int newGrade)
+        {
+            newGrade = grade + curve;
+            if (newGrade > 100) newGrade = 100;
         }
 
         private static void TimeStamp(ref string original)
