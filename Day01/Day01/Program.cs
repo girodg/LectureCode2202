@@ -35,6 +35,19 @@ namespace Day01
             int grade = 59;
             int curve = 5;
             CurveGrade(grade, curve, out int newGR);
+
+            MyFavoriteNumber(out int myFave);
+            Console.WriteLine($"Your favorite number was {myFave}? weird.");
+        }
+
+        static void MyFavoriteNumber(out int fave)
+        {
+            Console.Write("What is your favorite number? ");
+            string numStr = Console.ReadLine();
+            if (!int.TryParse(numStr, out fave))
+            {
+                Console.WriteLine("Please enter a number next time. Steev.");
+            }
         }
         static void CurveGrade(int grade, int curve, out int newGrade)
         {
