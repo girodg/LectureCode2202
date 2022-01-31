@@ -6,9 +6,11 @@ namespace Day01
     {
         static void Main(string[] args)
         {
-            int sum = Add(5, 7);
+            int num1 = 5, num2 = 7;
+            int sum = Add(num1, num2);//pass by value
             PrintMessage();
             string msg = GetMessage();
+            PrintMessage(msg);
         }
 
         private static string GetMessage()
@@ -22,6 +24,10 @@ namespace Day01
         private static void PrintMessage()
         {
             Console.WriteLine("Hello Gotham. I am the hero you need.");
+        }
+        private static void PrintMessage(string message)
+        {
+            Console.WriteLine(message);
         }
 
         public static int Add(int n1, int n2)
