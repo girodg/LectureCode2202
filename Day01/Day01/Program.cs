@@ -11,6 +11,25 @@ namespace Day01
             PrintMessage();
             string msg = GetMessage();
             PrintMessage(msg);
+            TimeStamp(ref msg);
+            PrintMessage(msg);
+
+            Factor(ref num1, 3);
+            Factor(ref num2, 3);
+            //$ - interpolated string
+            Console.WriteLine($"factored: {num1}");
+        }
+
+        private static void TimeStamp(ref string original)
+        {
+            //original = DateTime.Now + ": " + original;
+            //OR build the string with interpolation
+            original = $"{DateTime.Now}: {original}";
+        }
+
+        static void Factor(ref int num, int factor)
+        {
+            num *= factor;
         }
 
         private static string GetMessage()
