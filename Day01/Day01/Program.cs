@@ -75,11 +75,11 @@ namespace Day01
             return message;
         }
 
-        private static void PrintMessage()
-        {
-            Console.WriteLine("Hello Gotham. I am the hero you need.");
-        }
-        private static void PrintMessage(string message)
+        //private static void PrintMessage()
+        //{
+        //    Console.WriteLine("Hello Gotham. I am the hero you need.");
+        //}
+        private static void PrintMessage(string message = "Hello Gotham. I am the hero you need.")
         {
             Console.WriteLine(message);
         }
