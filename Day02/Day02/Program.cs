@@ -25,6 +25,14 @@ namespace Day02
             Info(nums);
             Print(nums);
             ListChallenge();
+
+            string best = "Batman;;;Bruce Wayne;The Bat;The Dark Knight?Joker?The Bat Who Launghs";
+            string[] theBest = best.Split(new char[] { ';', '?' },StringSplitOptions.RemoveEmptyEntries);
+            Console.WriteLine("The one and only...");
+            foreach (var item in theBest)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void Print(List<int> nums)
@@ -102,11 +110,11 @@ namespace Day02
             Console.ResetColor();
             foreach (var grade in grades)
             {
-                if (grade < 59.5) Console.ForegroundColor = ConsoleColor.Red;
-                else if (grade < 69.5) Console.ForegroundColor = ConsoleColor.DarkYellow;
-                else if (grade < 79.5) Console.ForegroundColor = ConsoleColor.Yellow;
-                else if (grade < 89.5) Console.ForegroundColor = ConsoleColor.DarkGreen;
-                else Console.ForegroundColor = ConsoleColor.Green;
+                //if (grade < 59.5) Console.ForegroundColor = ConsoleColor.Red;
+                //else if (grade < 69.5) Console.ForegroundColor = ConsoleColor.DarkYellow;
+                //else if (grade < 79.5) Console.ForegroundColor = ConsoleColor.Yellow;
+                //else if (grade < 89.5) Console.ForegroundColor = ConsoleColor.DarkGreen;
+                //else Console.ForegroundColor = ConsoleColor.Green;
                 //OR, use a ternary
                 Console.ForegroundColor = (grade < 59.5) ? ConsoleColor.Red :
                                           (grade < 69.5) ? ConsoleColor.DarkYellow :
