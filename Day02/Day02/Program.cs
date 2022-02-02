@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Day02
 {
@@ -51,6 +52,46 @@ namespace Day02
                 grades.Add(rnd.NextDouble() * 100);
             }
             PrintGrades(grades);
+            int numDropped = DropFailing(grades);
+            Console.WriteLine($"Number of grades dropped: {numDropped}");
+            PrintGrades(grades);
+            List<double> pg2 = CurveGrades(grades);
+            PrintGrades(pg2);
+        }
+
+        private static List<double> CurveGrades(List<double> grades)
+        {
+            List<double> curved = grades.ToList();//clone the list
+            for (int i = 0; i < curved.Count; i++)
+            {
+                //ternary operator
+                curved[i] = (curved[i] < 95) ? curved[i] + 5 : 100;
+            }
+            return curved;
+        }
+
+        private static int DropFailing(List<double> fail)
+        {
+            int dropped = 0;
+            //for (int i = 0; i < fail.Count; i++)
+            //{
+            //    if (fail[i] < 59.5)
+            //    {
+            //        dropped++;
+            //        fail.RemoveAt(i);
+            //        --i;
+            //    }
+            //}
+            //OR use a reverse for loop
+            for (int i = fail.Count - 1; i >= 0; i--)
+            {
+                if (fail[i] < 59.5)
+                {
+                    dropped++;
+                    fail.RemoveAt(i);
+                }
+            }
+            return dropped;
         }
 
         private static void PrintGrades(List<double> grades)
@@ -90,6 +131,15 @@ namespace Day02
             {
                 Console.WriteLine(number);
             }
+
+            //convert to a list
+            //1) ToList
+            List<int> numList1 = nums.ToList();
+
+            //2) pass the array to the list constructor
+            List<int> numList2 = new List<int>(nums);
+
+            List<int> numList3 = numList2;//does NOT copy the list. copies the memory addr that numList2 uses
         }
     }
 }
