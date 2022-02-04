@@ -33,6 +33,7 @@ namespace Day02
             {
                 Console.WriteLine(item);
             }
+            Console.ReadLine();
         }
 
         private static void Print(List<int> nums)
