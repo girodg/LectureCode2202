@@ -100,9 +100,28 @@ namespace Day03
 
             PrintGrades(pg2);
             DropStudent(pg2, "PG02");
-
+            CurveGrades(pg2, "PG02", 5);
         }
 
+        private static void CurveGrades(Dictionary<string, double> grades, string courseName, double curve)
+        {
+            while (true)
+            {
+                Console.Write($"Please enter the name of the student from {courseName} to curve : ");
+                string name = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(name)) break;
+                if (grades.TryGetValue(name, out double grade))
+                {
+                    grade = (grade + curve > 100) ? 100 : grade + curve;
+                    //ternary operator
+                    grades[name] = grade;
+                    Console.WriteLine($"{name}'s grade was curved to {grade}..");
+                }
+                else
+                    Console.WriteLine($"{name} was not in {courseName}.");
+                PrintGrades(grades);
+            }
+        }
         private static void DropStudent(Dictionary<string, double> grades, string courseName)
         {
             while (true)
@@ -122,6 +141,7 @@ namespace Day03
         private static void PrintGrades(Dictionary<string, double> grades)
         {
             Console.ReadKey();
+            Console.Clear();
             Console.WriteLine("-------------GRADES-----------");
             foreach (var student in grades)
             {
