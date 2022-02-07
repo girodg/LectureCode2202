@@ -36,7 +36,7 @@ namespace Day04
             string filePath = "steev.txt";
             char delimiter = '?';
             //1. OPEN THE FILE
-            using (StreamWriter sw = new StreamWriter(filePath) )
+            using (StreamWriter sw = new StreamWriter(filePath))
             {
                 //2. WRITE THE FILE
                 sw.Write("Batman!");
@@ -90,6 +90,24 @@ namespace Day04
                     ser.Serialize(jtw, menu);
                 }
             }
+
+            if (File.Exists(filePath))
+            {
+                Console.WriteLine("---------Today's Menu----------");
+                try
+                {
+                    string jsonData = File.ReadAllText(filePath);
+                    Dictionary<string, float> todaysMenu = JsonConvert.DeserializeObject<Dictionary<string, float>>(jsonData);
+                    foreach (var item in todaysMenu)
+                    {
+                        Console.WriteLine($"{item.Value,7:C2} {item.Key}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Not a menu file.");
+                }
+            }
         }
 
         static void WriteJson(string fileName)
@@ -111,12 +129,12 @@ namespace Day04
         {
             char delimiter = '>';
             List<int> numbers = new List<int>() { 5, 7, 9, 13, 17, 42, 1 };
-            using (StreamWriter sw =new StreamWriter(fileName))
+            using (StreamWriter sw = new StreamWriter(fileName))
             {
                 bool isFirst = true;
                 foreach (var number in numbers)
                 {
-                    if(!isFirst)
+                    if (!isFirst)
                         sw.Write(delimiter);
                     sw.Write(number);
                     isFirst = false;
