@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -12,6 +13,7 @@ namespace Day04
             string filePath = "steev.txt";
             WriteData(filePath);
             ReadData(filePath);
+            WriteJson(filePath);
 
             //implement factorial
             //N! = N * (N-1) * (N-2)...1
@@ -67,6 +69,42 @@ namespace Day04
             string[] fData = fileData.Split(delimiter);
             foreach (var item in fData)
                 Console.WriteLine(item);
+
+            Dictionary<string, float> menu = new Dictionary<string, float>()
+            {
+                {"waffles", 5.99F },
+                {"French Toast", 8.99F },
+                {"Omelet", 10.99F },
+                {"bacon", 4.99F },
+                {"cinnamon rolls", 3.99F }
+            };
+
+            //change the extension to .json
+            filePath = Path.ChangeExtension(filePath, ".json");
+            using (StreamWriter sw = new StreamWriter(filePath))
+            {
+                using (JsonTextWriter jtw = new JsonTextWriter(sw))
+                {
+                    JsonSerializer ser = new JsonSerializer();
+                    ser.Formatting = Formatting.Indented;
+                    ser.Serialize(jtw, menu);
+                }
+            }
+        }
+
+        static void WriteJson(string fileName)
+        {
+            fileName = Path.ChangeExtension(fileName, ".json");
+            List<int> numbers = new List<int>() { 5, 7, 9, 13, 17, 42, 1 };
+            using (StreamWriter sw = new StreamWriter(fileName))
+            {
+                using (JsonTextWriter jtw = new JsonTextWriter(sw))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Formatting = Formatting.Indented;
+                    serializer.Serialize(jtw, numbers);
+                }
+            }
         }
 
         static void WriteData(string fileName)
