@@ -1,28 +1,10 @@
-﻿using System;
+﻿using Day06CL;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace Day06
 {
-    class Human
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-
-        public Human(string name, int age)
-        {
-            NumberOfHumans++;
-            Name = name;
-            Age = age;
-        }
-
-        public static Human Birth()
-        {
-            return new Human("Bruce Wayne", 35);
-        }
-
-        public static int NumberOfHumans { get; set; }
-    }
 
     internal class Program
     {
