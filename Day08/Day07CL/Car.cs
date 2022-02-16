@@ -42,6 +42,7 @@ namespace Day07CL
             Make = make;
             Model = model;
             Color = color;
+            Console.WriteLine("Car constructed");
         }
         #endregion
 

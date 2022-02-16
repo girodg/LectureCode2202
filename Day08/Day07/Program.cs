@@ -12,6 +12,7 @@ namespace Day07
             Car batmobile = new Car("Mach", "1", ConsoleColor.Black);
             //call the set on the property
             myRide.Color = ConsoleColor.DarkYellow;
+            Truck cyber = new Truck(1000, 10000, "Tesla", "Cybertruck", ConsoleColor.Gray);
 
             //call the get on the property
             Console.WriteLine(myRide.Make);
@@ -40,6 +41,17 @@ namespace Day07
             FantasyWeapon sword = new FantasyWeapon(WeaponRarity.Legendary, 100, 5000, 100000);
             int damage = sword.DoDamage();
             Console.WriteLine($"I swing my sword (swish) and do {damage} points of damage to the rat.");
+
+            FantasyWeapon fw = WeaponFactory.MakeWeapon(WeaponRarity.Rare, 20, 500, 10000);
+
+            int number = 5;
+            float dNumber = number;//implicit casting
+            number = (int)dNumber;//explicit casting
+
+            Car tesla = myRide;
+            //always safe
+            //car    truck
+            myRide = cyber;//upcasting. from Truck to Car
         }
     }
 }
