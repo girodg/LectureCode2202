@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day07", "Day07\Day07.csproj", "{B1853B39-085F-4333-A8E5-5716CD637895}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day07CL", "Day07CL\Day07CL.csproj", "{C625FDF6-ED89-4548-92BA-58DF3D08FAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day07CLTests", "Day07CLTests\Day07CLTests.csproj", "{A10FAF7A-B800-48E9-B7F3-FB76AE5B28CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1853B39-085F-4333-A8E5-5716CD637895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1853B39-085F-4333-A8E5-5716CD637895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1853B39-085F-4333-A8E5-5716CD637895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1853B39-085F-4333-A8E5-5716CD637895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C625FDF6-ED89-4548-92BA-58DF3D08FAE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C625FDF6-ED89-4548-92BA-58DF3D08FAE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C625FDF6-ED89-4548-92BA-58DF3D08FAE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C625FDF6-ED89-4548-92BA-58DF3D08FAE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A10FAF7A-B800-48E9-B7F3-FB76AE5B28CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A10FAF7A-B800-48E9-B7F3-FB76AE5B28CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A10FAF7A-B800-48E9-B7F3-FB76AE5B28CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A10FAF7A-B800-48E9-B7F3-FB76AE5B28CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B19DA5B-2676-4029-97AB-31A78753CAE1}
+	EndGlobalSection
+EndGlobal
