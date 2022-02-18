@@ -13,10 +13,15 @@ namespace Day07CL
         public int MaxDamage { get; set; }
         public int Cost { get; set; }
 
-        public int DoDamage()
+        //public int DoDamage()
+        //{
+        //    Random random = new Random();
+        //    return (int)(MaxDamage * random.NextDouble());
+        //}
+        public int DoDamage(int enchantment = 0)
         {
             Random random = new Random();
-            return (int)(MaxDamage * random.NextDouble());
+            return (int)((MaxDamage+enchantment) * random.NextDouble());
         }
 
         public FantasyWeapon(WeaponRarity rarity, int level, int maxDamage, int cost)
